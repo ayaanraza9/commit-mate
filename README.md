@@ -335,51 +335,6 @@ commit-forge lint "$1"' > .git/hooks/commit-msg
 chmod +x .git/hooks/commit-msg
 ```
 
-## Development
-
-### Building
-
-```bash
-npm run build
-# or with bun
-bun run build.js
-```
-
-This creates a single minified bundle at `dist/cli.js` that contains all the code. The bundle is optimized and ready for distribution.
-
-### Publishing to npm
-
-1. **Login to npm** (if not already logged in):
-
-   ```bash
-   npm login
-   ```
-
-2. **Build and verify**:
-
-   ```bash
-   npm run build
-   ```
-
-3. **Publish**:
-
-   ```bash
-   npm publish
-   ```
-
-   Or use the npm script:
-
-   ```bash
-   npm run publish
-   ```
-
-The `prepublishOnly` script will automatically:
-
-- Build the minified bundle
-- Ensure the CLI binary is executable
-
-**Note:** Only the `dist/` folder will be published to npm. The source files (`bin/`, `lib/`) are excluded from the package.
-
 ## License
 
 MIT
